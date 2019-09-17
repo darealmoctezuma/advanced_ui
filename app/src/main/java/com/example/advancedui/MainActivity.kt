@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         buttonToast.setOnClickListener { showToast() }
         buttonSnackBar.setOnClickListener { showSnackBar() }
-        // TODO 2) Make buttonSnackBarAction show a snackBar with an action
+        buttonSnackBarAction.setOnClickListener { showSnackBarWithAction() }
     }
 
     private fun showToast() {
@@ -30,8 +30,11 @@ class MainActivity : AppCompatActivity() {
         Snackbar.make(container, message, duration).show()
     }
 
-    // TODO 1) Add snackBar with action implementation
     private fun showSnackBarWithAction() {
-
+        val message = getString(R.string.hello_im_dog)
+        val duration = Snackbar.LENGTH_LONG
+        Snackbar.make(container, message, duration).setAction(getString(R.string.action_bark)) {
+            //Do whatever action you want to :3
+        }.show()
     }
 }
