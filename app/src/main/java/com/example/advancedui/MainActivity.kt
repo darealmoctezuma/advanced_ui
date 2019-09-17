@@ -2,6 +2,7 @@ package com.example.advancedui
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         buttonToast.setOnClickListener { showToast() }
         buttonSnackBar.setOnClickListener { showSnackBar() }
         buttonSnackBarAction.setOnClickListener { showSnackBarWithAction() }
-        // TODO 5) Make buttonDialog show an alertDialog
+        buttonDialog.setOnClickListener { showDialog() }
     }
 
     private fun showToast() {
@@ -40,9 +41,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showDialog() {
-        //TODO 1) Create an alertDialogBuilder
-        //TODO 2) Create an alertDialog
-        //TODO 3) Show the alertDialog
-        //TODO 4) Add actions to the dialog
+        val alertDialogBuilder = AlertDialog.Builder(this).apply {
+            //Optional Title
+            setTitle(getString(R.string.dialog_title))
+            setMessage(getString(R.string.dialog_message))
+                .setPositiveButton(getString(R.string.dialog_positive)) { dialog, id ->
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.dialog_positive_action),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                .setNegativeButton(getString(R.string.dialog_negative)) { dialog, id ->
+                    Toast.makeText(
+                        this@MainActivity,
+                        getString(R.string.dialog_negative_action),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+        }
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show()
     }
 }
