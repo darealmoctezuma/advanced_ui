@@ -3,6 +3,7 @@ package com.example.advancedui
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonToast.setOnClickListener { showToast() }
-        // TODO 3) Make Snackbar button show the snackBar
+        buttonSnackBar.setOnClickListener { showSnackBar() }
     }
 
     private fun showToast() {
@@ -22,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         toast.show()
     }
 
-    // TODO 2) Add SnackBar implementation
     private fun showSnackBar() {
-
+        val message = getString(R.string.hello_snackbar)
+        val duration = Snackbar.LENGTH_LONG
+        Snackbar.make(container, message, duration).show()
     }
 }
