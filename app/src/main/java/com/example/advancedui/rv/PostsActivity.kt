@@ -5,28 +5,37 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.advancedui.R
+import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class PostsActivity : AppCompatActivity() {
     private lateinit var viewModel: PostViewModel
-
-    //TODO 1) Create a new Layout resource file for your Rv item
-    //TODO 2) ***Inside the layout resource file*** Design each item
-    //For convenience, this file has been already created an designed for you :v
-
-    //TODO 16) Create a new val adapter of type PostAdapter
+    private val postAdapter = PostAdapter(this::postClicked)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
 
-        //TODO 17) Set a LinearLayoutManager to the posts RecyclerView
-        //TODO 18) Set a the posts recyclerView adapter with our custom adapter
-        //TODO 19) Add a divider between the posts
-
         viewModel = ViewModelProviders.of(this).get(PostViewModel::class.java)
+
+        posts.layoutManager = LinearLayoutManager(this)
+        posts.adapter = postAdapter
+
+        posts.apply {
+            layoutManager = LinearLayoutManager(this@PostsActivity)
+            adapter = postAdapter
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@PostsActivity,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+        }
+
         viewModel.posts.observe(this, Observer { posts ->
-            //TODO 20) Call postAdapter.summitList and pass posts as its argument
+            postAdapter.summitList(posts)
         })
 
     }
