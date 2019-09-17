@@ -1,5 +1,5 @@
 <resources>
-
+    <!--    TODO 1) Update your theme to NoActionBar-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

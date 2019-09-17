@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         buttonSnackBar.setOnClickListener { showSnackBar() }
         buttonSnackBarAction.setOnClickListener { showSnackBarWithAction() }
         buttonDialog.setOnClickListener { showDialog() }
+
+        configureToolbar()
     }
 
     private fun showToast() {
@@ -64,4 +66,14 @@ class MainActivity : AppCompatActivity() {
         val alertDialog = alertDialogBuilder.create()
         alertDialog.show()
     }
+
+    private fun configureToolbar() {
+        // TODO 3) Set the toolbar as the supportActionBar
+        // TODO 4) Set up the Up action
+        // TODO 5) Create Menu resource file inside Res folder
+        // TODO 6) ***Inside your Menu resource file*** Add two items, one for search (ifRoom) and one to logout (never)
+    }
+
+    //TODO 7) Inflate the Menu Items
+    //TODO 8) Set the action for each item on the Menu
 }
