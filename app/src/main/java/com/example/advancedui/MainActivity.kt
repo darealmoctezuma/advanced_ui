@@ -1,7 +1,9 @@
 package com.example.advancedui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,11 +11,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TODO 2) Make button show a toast
+        buttonToast.setOnClickListener { showToast() }
     }
 
-    //TODO 1) Generate code to show a toast
     private fun showToast() {
-
+        val duration = Toast.LENGTH_LONG
+        val message = getString(R.string.hello_toast)
+        val toast = Toast.makeText(this, message, duration)
+        toast.show()
     }
 }
