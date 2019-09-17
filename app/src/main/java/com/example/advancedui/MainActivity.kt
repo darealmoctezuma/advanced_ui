@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         buttonToast.setOnClickListener { showToast() }
+        // TODO 3) Make Snackbar button show the snackBar
     }
 
     private fun showToast() {
@@ -19,5 +20,10 @@ class MainActivity : AppCompatActivity() {
         val message = getString(R.string.hello_toast)
         val toast = Toast.makeText(this, message, duration)
         toast.show()
+    }
+
+    // TODO 2) Add SnackBar implementation
+    private fun showSnackBar() {
+
     }
 }
