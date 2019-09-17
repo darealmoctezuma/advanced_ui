@@ -1,6 +1,8 @@
 package com.example.advancedui
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -68,12 +70,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configureToolbar() {
-        // TODO 3) Set the toolbar as the supportActionBar
-        // TODO 4) Set up the Up action
-        // TODO 5) Create Menu resource file inside Res folder
-        // TODO 6) ***Inside your Menu resource file*** Add two items, one for search (ifRoom) and one to logout (never)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
-    //TODO 7) Inflate the Menu Items
-    //TODO 8) Set the action for each item on the Menu
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        android.R.id.home -> {
+            //Handles the Up action
+            true
+        }
+
+        R.id.action_search -> {
+            Toast.makeText(this, getString(R.string.action_search), Toast.LENGTH_SHORT).show()
+            true
+        }
+
+        R.id.action_log_out -> {
+            Toast.makeText(this, getString(R.string.action_log_out), Toast.LENGTH_SHORT).show()
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
 }
