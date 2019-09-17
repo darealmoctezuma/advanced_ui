@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Advanced UI</string>
+    <string name="hello_toast">Hola Pan Tostado</string>
+    <string name="hello_snackbar">Hola barra de botanas</string>
+    <string name="action_bark">Bark</string>
+    <string name="hello_im_dog">Hello, I\'m a dog</string>
+    <string name="bark_bark">Bark! Bark!</string>
+    <string name="dialog_title">Cool Title</string>
+    <string name="dialog_message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum aliquet convallis rutrum. Vestibulum sed semper odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="dialog_positive">Yes</string>
+    <string name="dialog_negative">No</string>
+    <string name="dialog_positive_action">Positive Clicked!</string>
+    <string name="dialog_negative_action">Negative Clicked!</string>
+    <string name="search">Search</string>
+    <string name="logout">Log out</string>
+    <string name="action_home">Home Clicked</string>
+    <string name="action_search">Search clicked</string>
+    <string name="action_log_out">Log out clicked</string>
+    <string name="title_toast">Toast</string>
+    <string name="title_snackbar">Snackbar</string>
+    <string name="title_snackbar_action">SnackBar with Action</string>
+    <string name="title_dialog">Alert Dialog</string>
+    <string name="title_toast_gravity">Toast with Gravity</string>
+    <string name="title_recycler_view">RecyclerView</string>
+    <string name="username">username</string>
+    <string name="image">Image</string>
+    <string name="fav">fav</string>
+    <string name="comment">comment</string>
+    <string name="send">send</string>
+</resources>
