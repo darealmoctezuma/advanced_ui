@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         buttonToast.setOnClickListener { showToast() }
         buttonSnackBar.setOnClickListener { showSnackBar() }
         buttonSnackBarAction.setOnClickListener { showSnackBarWithAction() }
+        // TODO 5) Make buttonDialog show an alertDialog
     }
 
     private fun showToast() {
@@ -36,5 +37,12 @@ class MainActivity : AppCompatActivity() {
         Snackbar.make(container, message, duration).setAction(getString(R.string.action_bark)) {
             //Do whatever action you want to :3
         }.show()
+    }
+
+    private fun showDialog() {
+        //TODO 1) Create an alertDialogBuilder
+        //TODO 2) Create an alertDialog
+        //TODO 3) Show the alertDialog
+        //TODO 4) Add actions to the dialog
     }
 }
